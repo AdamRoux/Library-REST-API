@@ -10,6 +10,6 @@ import com.wildcodeschool.library.entity.Book;
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
 
-	List<Book> findByTitleContainingOrContentContaining(String searchTerm, String searchTerm2);
+	List<Book> findByTitleContainingOrDescriptionContaining(String searchTerm, String searchTermBis);
 
 }

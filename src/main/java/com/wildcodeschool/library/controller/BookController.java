@@ -15,7 +15,7 @@ import java.util.Map;
 public class BookController {
 
     @Autowired
-    BookRepository bookRespository;
+    private BookRepository bookRespository;
 
     @GetMapping("/books")
     public List<Book> index(){
@@ -30,7 +30,7 @@ public class BookController {
     @PostMapping("/book/search")
     public List<Book> search(@RequestBody Map<String, String> body){
         String searchTerm = body.get("text");
-        return bookRespository.findByTitleContainingOrContentContaining(searchTerm, searchTerm);
+        return bookRespository.findByTitleContainingOrDescriptionContaining(searchTerm, searchTerm);
     }
 
     @PostMapping("/books")
